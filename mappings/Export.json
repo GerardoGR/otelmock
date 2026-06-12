@@ -1,0 +1,10 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/opentelemetry.proto.collector.metrics.v1.MetricsService/Export"
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"partialSuccess\": {}}"
+  }
+}
