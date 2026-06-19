@@ -1,0 +1,25 @@
+service:
+  pipelines:
+    metrics:
+      exporters:
+        - debug
+        - otlp_grpc
+      processors: []
+      receivers:
+        - otlp
+
+exporters:
+  otlp_grpc:
+    endpoint: grpc.example.com:4317
+    tls:
+      insecure: true
+  debug:
+    verbosity: basic
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318

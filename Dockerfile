@@ -31,3 +31,5 @@ RUN mkdir -p grpc \
   && protoc --proto_path=opentelemetry-proto --include_imports --descriptor_set_out grpc/metrics_service.dsc opentelemetry-proto/opentelemetry/proto/collector/metrics/v1/metrics_service.proto
 
 COPY mappings /home/wiremock/mappings
+
+ENTRYPOINT ["/docker-entrypoint.sh", "--global-response-templating", "--verbose", "--port", "4317"]
